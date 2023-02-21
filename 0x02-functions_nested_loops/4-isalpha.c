@@ -6,9 +6,9 @@
   *
   * Return: 1 for alphabetic character or 0 for anything else
   */
-int _isalpha(int i)
+int _isalpha(int c)
 {
-	if (( i >= 65 && i <= 90) || (i >= 97 && i <= 122))
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 	{
 		return (1);
 	}
