@@ -1,35 +1,23 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * *_strspn - gets the length of a prefix substring
- * @s: string to evaluate
- * @accept: string containing the list of characters to match in s
+ * _strchr - Locates a character in a string.
+ * @s: The string to be searched.
+ * @c: The character to be located.
  *
- * Return: the number of bytes in the initial segment
- * of s which consist only of bytes from accept
+ * Return: If c is found - a pointer to the first occurence.
+ * If c is not found - NULL.
  */
-unsigned int _strspn(char *s, char *accept)
+
+char *_strchr(char *s, char c)
 {
-	int i, j, f, flag;
+	int index;
 
-	f = 0;
-
-	for (i = 0; s[i] != '\0'; i++)
+	for (index = 0; s[index] >= '\0'; index++)
 	{
-		flag = 0;
-		for (j = 0; accept[j] != '\0'; j++)
-		{
-			if (s[i] == accept[j])
-			{
-				f++;
-				flag = 1;
-			}
-		}
-		if (flag == 0)
-		{
-			return (f);
-		}
+		if (s[index] == c)
+			return (s + index);
 	}
 
-	return (0);
+	return ('\0');
 }
